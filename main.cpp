@@ -1,49 +1,57 @@
-#include <iostream>
-#include <windows.h>
+// (Nama) Tyas Awalin Nisa Magfiroh
+//　(NIM) 1121031080
+// Kelas B
+// Nama File main.cpp
+// Deskripsi :　Memasukan jam, menit, dan detik lalu di validasi dengan fungsi isValid, jika benar akan menampilkan kata "Benar", jika salah akan menampilkan kata "Salah"
 
+#include <iostream>
 using namespace std;
-//nama: Tyas Awalin Nisa Magfiroh
-//NIM: 1121031080
-//kelas:B
+
+struct clock{
+    int jam;
+    int menit;
+    int detik;
+};
+
+
+int getJam(int jam){
+    return jam;
+};
+
+int getMenit(int menit){
+
+    return menit;
+};
+
+int getDetik(int detik){
+
+    return detik;
+};
 
 int main()
 {
-    int HH,MM,SS,a,b;
-    b=a=0;
-    while(b==0)
-    {
-    cout<<"set jam : "<<endl;
-    cin>>HH;
-    cout<<"set menit : "<<endl;
-    cin>>MM;
-    cout<<"set detik: "<<endl;
-    cin>>SS;
-    if (HH<<23 && MM << 59 && SS <<59)
-    b++;
-    else
-        system ("cls");
-    }
-    while (a==0)
-        {
-        system ("cls");
-        cout << HH << ":" << MM << ":" << SS << endl;
-        Sleep(1000);
-        SS++;
-        if (SS>59)
-        {
-            SS=0;
-       MM++;
-        }
+    clock setJam;
+    clock setMenit;
+    clock setDetik;
 
-        if (MM > 59)
-        {
-            MM=0;
-        HH++;
-        }
-        if (HH > 23)
-        {
-            HH=0;
-        }
-        }
-        return 0;
-}
+    cout << "Masukan Jam : ";
+    cin >> setJam.jam;
+    int hh = getJam(setJam.jam);
+
+    cout << "Masukan Menit : ";
+    cin >> setMenit.menit;
+    int jj = getMenit(setMenit.menit);
+
+    cout << "Masukan Detik : ";
+    cin >> setDetik.detik;
+    int dd = getDetik(setDetik.detik);
+
+
+    if (hh < 23 && jj < 59 && dd < 59){
+        cout << "Benar \n";
+        cout << "Jam : " << hh << " Menit : " << jj << " Detik : " << dd;
+    }else {
+        cout << "Salah";
+    }
+    return 0;
+};
